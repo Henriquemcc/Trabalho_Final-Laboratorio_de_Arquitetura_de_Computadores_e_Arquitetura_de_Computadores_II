@@ -1,11 +1,11 @@
 MPLINK 4.35, Linker
-Linker Map File - Created Thu Nov 21 09:40:54 2019
+Linker Map File - Created Thu Nov 21 17:42:41 2019
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
                 ---------  ---------  ---------  ---------  ---------
-                   .org_0       code   0x000000    program   0x000068
-                   .cinit    romdata   0x000034    program   0x000004
+                   .org_0       code   0x000000    program   0x0000f4
+                   .cinit    romdata   0x00007a    program   0x000004
      .config_2007_FINAL.O       code   0x002007    program   0x000002
 
 
@@ -13,36 +13,40 @@ Linker Map File - Created Thu Nov 21 09:40:54 2019
                               Program Memory Usage 
                                Start         End      
                            ---------   ---------      
-                            0x000000    0x000035      
+                            0x000000    0x00007b      
                             0x002007    0x002007      
-            55 out of 2183 program addresses used, program memory utilization is 2%
+            125 out of 2183 program addresses used, program memory utilization is 5%
 
 
 
                               Symbols - Sorted by Name
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-                   ATRASO   0x00000f    program     static C:\Users\465896\Desktop\ProjetoFinal\ProjetoFinal\Final.asm
-                  ATRASO1   0x000013    program     static C:\Users\465896\Desktop\ProjetoFinal\ProjetoFinal\Final.asm
-                  ATRASO2   0x00001c    program     static C:\Users\465896\Desktop\ProjetoFinal\ProjetoFinal\Final.asm
-                  ATRASO3   0x000020    program     static C:\Users\465896\Desktop\ProjetoFinal\ProjetoFinal\Final.asm
-                BTN_PRESS   0x00002f    program     static C:\Users\465896\Desktop\ProjetoFinal\ProjetoFinal\Final.asm
-                 FIMCLEAR   0x000034    program     static C:\Users\465896\Desktop\ProjetoFinal\ProjetoFinal\Final.asm
-                   INICIO   0x000001    program     static C:\Users\465896\Desktop\ProjetoFinal\ProjetoFinal\Final.asm
-                   REPETE   0x00000d    program     static C:\Users\465896\Desktop\ProjetoFinal\ProjetoFinal\Final.asm
+                   ATRASO   0x000041    program     static C:\Users\iagom\OneDrive\Documentos\ACII\Trabalho_Final-Laboratorio_de_Arquitetura_de_Computadores_e_Arquitetura_de_Computadores_II-master\Final.asm
+                  ATRASO1   0x000043    program     static C:\Users\iagom\OneDrive\Documentos\ACII\Trabalho_Final-Laboratorio_de_Arquitetura_de_Computadores_e_Arquitetura_de_Computadores_II-master\Final.asm
+                  BTN_ATR   0x000049    program     static C:\Users\iagom\OneDrive\Documentos\ACII\Trabalho_Final-Laboratorio_de_Arquitetura_de_Computadores_e_Arquitetura_de_Computadores_II-master\Final.asm
+                BTN_ATR_1   0x00004d    program     static C:\Users\iagom\OneDrive\Documentos\ACII\Trabalho_Final-Laboratorio_de_Arquitetura_de_Computadores_e_Arquitetura_de_Computadores_II-master\Final.asm
+                BTN_PRESS   0x000067    program     static C:\Users\iagom\OneDrive\Documentos\ACII\Trabalho_Final-Laboratorio_de_Arquitetura_de_Computadores_e_Arquitetura_de_Computadores_II-master\Final.asm
+                 FIMCLEAR   0x00006c    program     static C:\Users\iagom\OneDrive\Documentos\ACII\Trabalho_Final-Laboratorio_de_Arquitetura_de_Computadores_e_Arquitetura_de_Computadores_II-master\Final.asm
+          FIMCLEAR_ATRASO   0x000074    program     static C:\Users\iagom\OneDrive\Documentos\ACII\Trabalho_Final-Laboratorio_de_Arquitetura_de_Computadores_e_Arquitetura_de_Computadores_II-master\Final.asm
+        FIMCLEAR_ATRASO_1   0x000076    program     static C:\Users\iagom\OneDrive\Documentos\ACII\Trabalho_Final-Laboratorio_de_Arquitetura_de_Computadores_e_Arquitetura_de_Computadores_II-master\Final.asm
+                   INICIO   0x000001    program     static C:\Users\iagom\OneDrive\Documentos\ACII\Trabalho_Final-Laboratorio_de_Arquitetura_de_Computadores_e_Arquitetura_de_Computadores_II-master\Final.asm
+                   REPETE   0x00000b    program     static C:\Users\iagom\OneDrive\Documentos\ACII\Trabalho_Final-Laboratorio_de_Arquitetura_de_Computadores_e_Arquitetura_de_Computadores_II-master\Final.asm
 
 
 
                               Symbols - Sorted by Address
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-                   INICIO   0x000001    program     static C:\Users\465896\Desktop\ProjetoFinal\ProjetoFinal\Final.asm
-                   REPETE   0x00000d    program     static C:\Users\465896\Desktop\ProjetoFinal\ProjetoFinal\Final.asm
-                   ATRASO   0x00000f    program     static C:\Users\465896\Desktop\ProjetoFinal\ProjetoFinal\Final.asm
-                  ATRASO1   0x000013    program     static C:\Users\465896\Desktop\ProjetoFinal\ProjetoFinal\Final.asm
-                  ATRASO2   0x00001c    program     static C:\Users\465896\Desktop\ProjetoFinal\ProjetoFinal\Final.asm
-                  ATRASO3   0x000020    program     static C:\Users\465896\Desktop\ProjetoFinal\ProjetoFinal\Final.asm
-                BTN_PRESS   0x00002f    program     static C:\Users\465896\Desktop\ProjetoFinal\ProjetoFinal\Final.asm
-                 FIMCLEAR   0x000034    program     static C:\Users\465896\Desktop\ProjetoFinal\ProjetoFinal\Final.asm
+                   INICIO   0x000001    program     static C:\Users\iagom\OneDrive\Documentos\ACII\Trabalho_Final-Laboratorio_de_Arquitetura_de_Computadores_e_Arquitetura_de_Computadores_II-master\Final.asm
+                   REPETE   0x00000b    program     static C:\Users\iagom\OneDrive\Documentos\ACII\Trabalho_Final-Laboratorio_de_Arquitetura_de_Computadores_e_Arquitetura_de_Computadores_II-master\Final.asm
+                   ATRASO   0x000041    program     static C:\Users\iagom\OneDrive\Documentos\ACII\Trabalho_Final-Laboratorio_de_Arquitetura_de_Computadores_e_Arquitetura_de_Computadores_II-master\Final.asm
+                  ATRASO1   0x000043    program     static C:\Users\iagom\OneDrive\Documentos\ACII\Trabalho_Final-Laboratorio_de_Arquitetura_de_Computadores_e_Arquitetura_de_Computadores_II-master\Final.asm
+                  BTN_ATR   0x000049    program     static C:\Users\iagom\OneDrive\Documentos\ACII\Trabalho_Final-Laboratorio_de_Arquitetura_de_Computadores_e_Arquitetura_de_Computadores_II-master\Final.asm
+                BTN_ATR_1   0x00004d    program     static C:\Users\iagom\OneDrive\Documentos\ACII\Trabalho_Final-Laboratorio_de_Arquitetura_de_Computadores_e_Arquitetura_de_Computadores_II-master\Final.asm
+                BTN_PRESS   0x000067    program     static C:\Users\iagom\OneDrive\Documentos\ACII\Trabalho_Final-Laboratorio_de_Arquitetura_de_Computadores_e_Arquitetura_de_Computadores_II-master\Final.asm
+                 FIMCLEAR   0x00006c    program     static C:\Users\iagom\OneDrive\Documentos\ACII\Trabalho_Final-Laboratorio_de_Arquitetura_de_Computadores_e_Arquitetura_de_Computadores_II-master\Final.asm
+          FIMCLEAR_ATRASO   0x000074    program     static C:\Users\iagom\OneDrive\Documentos\ACII\Trabalho_Final-Laboratorio_de_Arquitetura_de_Computadores_e_Arquitetura_de_Computadores_II-master\Final.asm
+        FIMCLEAR_ATRASO_1   0x000076    program     static C:\Users\iagom\OneDrive\Documentos\ACII\Trabalho_Final-Laboratorio_de_Arquitetura_de_Computadores_e_Arquitetura_de_Computadores_II-master\Final.asm
 
 
