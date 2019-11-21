@@ -1,11 +1,11 @@
 MPLINK 4.35, Linker
-Linker Map File - Created Thu Nov 21 09:12:27 2019
+Linker Map File - Created Thu Nov 21 09:40:54 2019
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
                 ---------  ---------  ---------  ---------  ---------
-                   .org_0       code   0x000000    program   0x00006c
-                   .cinit    romdata   0x000036    program   0x000004
+                   .org_0       code   0x000000    program   0x000068
+                   .cinit    romdata   0x000034    program   0x000004
      .config_2007_FINAL.O       code   0x002007    program   0x000002
 
 
@@ -13,9 +13,9 @@ Linker Map File - Created Thu Nov 21 09:12:27 2019
                               Program Memory Usage 
                                Start         End      
                            ---------   ---------      
-                            0x000000    0x000037      
+                            0x000000    0x000035      
                             0x002007    0x002007      
-            57 out of 2183 program addresses used, program memory utilization is 2%
+            55 out of 2183 program addresses used, program memory utilization is 2%
 
 
 
@@ -26,8 +26,8 @@ Linker Map File - Created Thu Nov 21 09:12:27 2019
                   ATRASO1   0x000013    program     static C:\Users\465896\Desktop\ProjetoFinal\ProjetoFinal\Final.asm
                   ATRASO2   0x00001c    program     static C:\Users\465896\Desktop\ProjetoFinal\ProjetoFinal\Final.asm
                   ATRASO3   0x000020    program     static C:\Users\465896\Desktop\ProjetoFinal\ProjetoFinal\Final.asm
-                BTN_PRESS   0x000031    program     static C:\Users\465896\Desktop\ProjetoFinal\ProjetoFinal\Final.asm
-                 FIMCLEAR   0x000036    program     static C:\Users\465896\Desktop\ProjetoFinal\ProjetoFinal\Final.asm
+                BTN_PRESS   0x00002f    program     static C:\Users\465896\Desktop\ProjetoFinal\ProjetoFinal\Final.asm
+                 FIMCLEAR   0x000034    program     static C:\Users\465896\Desktop\ProjetoFinal\ProjetoFinal\Final.asm
                    INICIO   0x000001    program     static C:\Users\465896\Desktop\ProjetoFinal\ProjetoFinal\Final.asm
                    REPETE   0x00000d    program     static C:\Users\465896\Desktop\ProjetoFinal\ProjetoFinal\Final.asm
 
@@ -42,7 +42,7 @@ Linker Map File - Created Thu Nov 21 09:12:27 2019
                   ATRASO1   0x000013    program     static C:\Users\465896\Desktop\ProjetoFinal\ProjetoFinal\Final.asm
                   ATRASO2   0x00001c    program     static C:\Users\465896\Desktop\ProjetoFinal\ProjetoFinal\Final.asm
                   ATRASO3   0x000020    program     static C:\Users\465896\Desktop\ProjetoFinal\ProjetoFinal\Final.asm
-                BTN_PRESS   0x000031    program     static C:\Users\465896\Desktop\ProjetoFinal\ProjetoFinal\Final.asm
-                 FIMCLEAR   0x000036    program     static C:\Users\465896\Desktop\ProjetoFinal\ProjetoFinal\Final.asm
+                BTN_PRESS   0x00002f    program     static C:\Users\465896\Desktop\ProjetoFinal\ProjetoFinal\Final.asm
+                 FIMCLEAR   0x000034    program     static C:\Users\465896\Desktop\ProjetoFinal\ProjetoFinal\Final.asm
 
 

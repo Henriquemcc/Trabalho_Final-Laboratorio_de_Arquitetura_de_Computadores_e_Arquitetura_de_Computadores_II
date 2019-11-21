@@ -1,4 +1,4 @@
-MPASM  5.35                         FINAL.ASM   11-21-2019  9:12:26         PAGE  1
+MPASM  5.35                         FINAL.ASM   11-21-2019  9:40:53         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -57,7 +57,7 @@ Message[302]: Register in operand not in bank 0.  Ensure that bank bits are corr
 000D   2???           00042         CALL ATRASO       ;Vai para ATRASO
 000E   2???           00043         GOTO REPETE       ;Volta para inicio 
 000F                  00044 ATRASO
-MPASM  5.35                         FINAL.ASM   11-21-2019  9:12:26         PAGE  2
+MPASM  5.35                         FINAL.ASM   11-21-2019  9:40:53         PAGE  2
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -80,9 +80,9 @@ Message[305]: Using default destination of 1 (file).
 001A   2???           00057         CALL    ATRASO2
 001B   0008           00058         RETURN
 001C                  00059 ATRASO2
-001C   3064           00060         MOVLW 100                       ;PRA CADA 1 +3US
+001C   3096           00060         MOVLW 150                       ;PRA CADA 1 +3US
 001D   00A0           00061         MOVWF CONTADOR1
-001E   307D           00062         MOVLW 125
+001E   3092           00062         MOVLW 146
 001F   00A1           00063         MOVWF CONTADOR2
 0020                  00064 ATRASO3
 0020   0000           00065         NOP
@@ -95,27 +95,25 @@ Message[305]: Using default destination of 1 (file).
 0027   0000           00072         NOP
 0028   0000           00073         NOP
 0029   0000           00074         NOP
-002A   0000           00075         NOP
-002B   0000           00076         NOP
 Message[305]: Using default destination of 1 (file).
-002C   0BA0           00077         DECFSZ  CONTADOR1
+002A   0BA0           00075         DECFSZ  CONTADOR1
+002B   2???           00076         GOTO    ATRASO3
+Message[305]: Using default destination of 1 (file).
+002C   0BA1           00077         DECFSZ  CONTADOR2
 002D   2???           00078         GOTO    ATRASO3
-Message[305]: Using default destination of 1 (file).
-002E   0BA1           00079         DECFSZ  CONTADOR2
-002F   2???           00080         GOTO    ATRASO3
-0030   0008           00081         RETURN
-                      00082         
-0031                  00083 BTN_PRESS
-0031   1806           00084         BTFSC   VER1
+002E   0008           00079         RETURN
+                      00080         
+002F                  00081 BTN_PRESS
+002F   1806           00082         BTFSC   VER1
+0030   2???           00083         GOTO FIMCLEAR
+0031   1986           00084         BTFSC   VER2
 0032   2???           00085         GOTO FIMCLEAR
-0033   1986           00086         BTFSC   VER2
-0034   2???           00087         GOTO FIMCLEAR
-0035   0008           00088         RETURN
-0036                  00089 FIMCLEAR
-                      00090          
+0033   0008           00086         RETURN
+0034                  00087 FIMCLEAR
+                      00088          
 Warning[205]: Found directive in column 1. (END)
-3F10                  00091 END
-MPASM  5.35                         FINAL.ASM   11-21-2019  9:12:26         PAGE  3
+3F10                  00089 END
+MPASM  5.35                         FINAL.ASM   11-21-2019  9:40:53         PAGE  3
 
 
 SYMBOL TABLE
@@ -132,7 +130,7 @@ BANK0                             BCF STATUS,RP0
 BANK1                             BSF STATUS,RP0
 BRGH                              00000002
 BTN                               PORTA,2
-BTN_PRESS                         00000031
+BTN_PRESS                         0000002F
 C                                 00000000
 C1INV                             00000004
 C1OUT                             00000006
@@ -171,10 +169,10 @@ EEIE                              00000007
 EEIF                              00000007
 F                                 00000001
 FERR                              00000002
-FIMCLEAR                          00000036
+FIMCLEAR                          00000034
 FSR                               00000004
 GIE                               00000007
-MPASM  5.35                         FINAL.ASM   11-21-2019  9:12:26         PAGE  4
+MPASM  5.35                         FINAL.ASM   11-21-2019  9:40:53         PAGE  4
 
 
 SYMBOL TABLE
@@ -233,7 +231,7 @@ T0IE                              00000005
 T0IF                              00000002
 T0SE                              00000004
 T1CKPS0                           00000004
-MPASM  5.35                         FINAL.ASM   11-21-2019  9:12:26         PAGE  5
+MPASM  5.35                         FINAL.ASM   11-21-2019  9:40:53         PAGE  5
 
 
 SYMBOL TABLE
@@ -292,7 +290,7 @@ _BODEN_ON                         00003FFF
 _BOREN_OFF                        00003FBF
 _BOREN_ON                         00003FFF
 _CP_OFF                           00003FFF
-MPASM  5.35                         FINAL.ASM   11-21-2019  9:12:26         PAGE  6
+MPASM  5.35                         FINAL.ASM   11-21-2019  9:40:53         PAGE  6
 
 
 SYMBOL TABLE
