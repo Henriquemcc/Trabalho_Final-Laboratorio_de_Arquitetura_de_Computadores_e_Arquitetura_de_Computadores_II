@@ -1,4 +1,4 @@
-MPASM  5.35                         FINAL.ASM   11-21-2019  17:42:40         PAGE  1
+MPASM  5.35                         FINAL.ASM   11-22-2019  13:03:52         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -40,24 +40,24 @@ Warning[205]: Found directive in column 1. (RADIX)
 0000   2???           00027         GOTO    INICIO
                       00028                 
 0001                  00029 INICIO
-0001   1683           00030         BANK1;ALTERA PARA O BANCO 1
-0002   3004           00031         MOVLW B'00000100'
+0001   0185           00030         CLRF PORTA;LIMPA O PORTA
+0002   0186           00031         CLRF PORTB;LIMPA O PORTB
+0003   1683           00032         BANK1;ALTERA PARA O BANCO 1
+0004   3004           00033         MOVLW B'00000100'
 Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
-0003   0085           00032         MOVWF TRISA;DEFINE RA1 COMO ENTRADA E DEMAIS COMO SAÍDAS
-0004   3000           00033         MOVLW B'00000000'
-Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
-0005   0086           00034         MOVWF TRISB;DEFINE TODO O PORTB COMO SAÍDA
+0005   0085           00034         MOVWF TRISA;DEFINE RA1 COMO ENTRADA E DEMAIS COMO SAÍDAS
 0006   3000           00035         MOVLW B'00000000'
-0007   008B           00036         MOVWF INTCON;TODAS AS INTERRUPÇÕES DESLIGADAS
-0008   1283           00037         BANK0;RETORNA PARA O BANCO 0
-0009   3007           00038         MOVLW B'00000111'
-000A   009F           00039         MOVWF CMCON;
-000B                  00040 REPETE
-000B   0185           00041         CLRF PORTA;LIMPA O PORTA
-000C   0186           00042         CLRF PORTB;LIMPA O PORTB
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0007   0086           00036         MOVWF TRISB;DEFINE TODO O PORTB COMO SAÍDA
+0008   3000           00037         MOVLW B'00000000'
+0009   008B           00038         MOVWF INTCON;TODAS AS INTERRUPÇÕES DESLIGADAS
+000A   1283           00039         BANK0;RETORNA PARA O BANCO 0
+000B   3007           00040         MOVLW B'00000111'
+000C   009F           00041         MOVWF CMCON;
+000D                  00042 REPETE
 000D   1686           00043         BSF  VERDE2
 000E   2???           00044         CALL ATRASO       ;Vai para ATRASO
-MPASM  5.35                         FINAL.ASM   11-21-2019  17:42:40         PAGE  2
+MPASM  5.35                         FINAL.ASM   11-22-2019  13:03:52         PAGE  2
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -116,7 +116,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 0034   1506           00095         BSF  VERDE1
 0035   2???           00096         CALL ATRASO       ;Vai para ATRASO
 0036   1106           00097         BCF  VERDE1
-MPASM  5.35                         FINAL.ASM   11-21-2019  17:42:40         PAGE  3
+MPASM  5.35                         FINAL.ASM   11-22-2019  13:03:52         PAGE  3
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -175,7 +175,7 @@ Message[305]: Using default destination of 1 (file).
 005D   0000           00145         NOP
 005E   0000           00146         NOP
 005F   0000           00147         NOP
-MPASM  5.35                         FINAL.ASM   11-21-2019  17:42:40         PAGE  4
+MPASM  5.35                         FINAL.ASM   11-22-2019  13:03:52         PAGE  4
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -194,28 +194,62 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 0068   2???           00158         GOTO    FIMCLEAR
 0069   1986           00159         BTFSC   VERMELHO2
 006A   2???           00160         GOTO    FIMCLEAR
-006B   0008           00161         RETURN
-006C                  00162 FIMCLEAR
-006C   1406           00163         BSF  VERMELHO1
-006D   1586           00164         BSF  VERMELHO2
-006E   1486           00165         BSF  AMARELO1
-006F   1606           00166         BSF  AMARELO2
-0070   1506           00167         BSF  VERDE1
-0071   1686           00168         BSF  VERDE2
-0072   2???           00169         CALL FIMCLEAR_ATRASO
-0073   0008           00170         RETURN
-0074                  00171 FIMCLEAR_ATRASO
-0074   30FF           00172         MOVLW 255
-0075   00A1           00173         MOVWF CONTADOR2
-0076                  00174 FIMCLEAR_ATRASO_1
-0076   0000           00175         NOP
+006B   2???           00161         GOTO    ERRROW
+006C                  00162 VOLTA
+006C   0008           00163         RETURN
+006D                  00164 FIMCLEAR
+006D   1406           00165         BSF  VERMELHO1
+006E   1586           00166         BSF  VERMELHO2
+006F   1486           00167         BSF  AMARELO1
+0070   1606           00168         BSF  AMARELO2
+0071   1506           00169         BSF  VERDE1
+0072   1686           00170         BSF  VERDE2
+0073   2???           00171         CALL FIMCLEAR_ATRASO
+0074   0185           00172         CLRF PORTA;LIMPA O PORTA
+0075   0186           00173         CLRF PORTB;LIMPA O PORTB
+0076   2???           00174         GOTO VOLTA
+0077                  00175 FIMCLEAR_ATRASO
+0077   30FF           00176         MOVLW 255
+0078   00A1           00177         MOVWF CONTADOR2
+0079   30FF           00178         MOVLW 255
+007A   00A2           00179         MOVWF CONTADOR3
+007B                  00180 FIMCLEAR_ATRASO_1
 Message[305]: Using default destination of 1 (file).
-0077   0BA1           00176         DECFSZ CONTADOR2
-0078   2???           00177         GOTO FIMCLEAR_ATRASO_1
-0079   0008           00178         RETURN
+007B   0BA1           00181         DECFSZ CONTADOR2
+007C   2???           00182         GOTO FIMCLEAR_ATRASO_1
+Message[305]: Using default destination of 1 (file).
+007D   0BA2           00183         DECFSZ CONTADOR3
+007E   2???           00184         GOTO FIMCLEAR_ATRASO_1
+007F   0008           00185         RETURN
+0080                  00186 ERRROW
+0080   1406           00187         BSF  VERMELHO1
+0081   1586           00188         BSF  VERMELHO2
+0082   2???           00189         CALL ERRROW_ATRASO
+0083   0185           00190         CLRF PORTA;LIMPA O PORTA
+0084   0186           00191         CLRF PORTB;LIMPA O PORTB
+0085   2???           00192         GOTO VOLTA
+0086                  00193 ERRROW_ATRASO
+0086   30FF           00194         MOVLW 255
+0087   00A1           00195         MOVWF CONTADOR2
+0088   30FF           00196         MOVLW 255
+0089   00A2           00197         MOVWF CONTADOR3
+008A                  00198 ERRROW_ATRASO_1
+MPASM  5.35                         FINAL.ASM   11-22-2019  13:03:52         PAGE  5
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Message[305]: Using default destination of 1 (file).
+008A   0BA1           00199         DECFSZ CONTADOR2
+008B   2???           00200         GOTO ERRROW_ATRASO_1
+Message[305]: Using default destination of 1 (file).
+008C   0BA2           00201         DECFSZ CONTADOR3
+008D   2???           00202         GOTO ERRROW_ATRASO_1
+008E   0008           00203         RETURN
 Warning[205]: Found directive in column 1. (END)
-3F10                  00179 END
-MPASM  5.35                         FINAL.ASM   11-21-2019  17:42:40         PAGE  5
+3F10                  00204 END
+MPASM  5.35                         FINAL.ASM   11-22-2019  13:03:52         PAGE  6
 
 
 SYMBOL TABLE
@@ -270,17 +304,20 @@ EECON2                            0000009D
 EEDATA                            0000009A
 EEIE                              00000007
 EEIF                              00000007
+ERRROW                            00000080
+ERRROW_ATRASO                     00000086
+ERRROW_ATRASO_1                   0000008A
 F                                 00000001
-FERR                              00000002
-FIMCLEAR                          0000006C
-FIMCLEAR_ATRASO                   00000074
-MPASM  5.35                         FINAL.ASM   11-21-2019  17:42:40         PAGE  6
+MPASM  5.35                         FINAL.ASM   11-22-2019  13:03:52         PAGE  7
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
-FIMCLEAR_ATRASO_1                 00000076
+FERR                              00000002
+FIMCLEAR                          0000006D
+FIMCLEAR_ATRASO                   00000077
+FIMCLEAR_ATRASO_1                 0000007B
 FSR                               00000004
 GIE                               00000007
 INDF                              00000000
@@ -321,7 +358,7 @@ RCIF                              00000005
 RCREG                             0000001A
 RCSTA                             00000018
 RD                                00000000
-REPETE                            0000000B
+REPETE                            0000000D
 RP0                               00000005
 RP1                               00000006
 RX9                               00000006
@@ -330,15 +367,15 @@ SPBRG                             00000099
 SPEN                              00000007
 SREN                              00000005
 STATUS                            00000003
-SYNC                              00000004
-T0CS                              00000005
-T0IE                              00000005
-MPASM  5.35                         FINAL.ASM   11-21-2019  17:42:40         PAGE  7
+MPASM  5.35                         FINAL.ASM   11-22-2019  13:03:52         PAGE  8
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
+SYNC                              00000004
+T0CS                              00000005
+T0IE                              00000005
 T0IF                              00000002
 T0SE                              00000004
 T1CKPS0                           00000004
@@ -377,6 +414,7 @@ VERDE1                            PORTB,2
 VERDE2                            PORTB,5
 VERMELHO1                         PORTB,0
 VERMELHO2                         PORTB,3
+VOLTA                             0000006C
 VR0                               00000000
 VR1                               00000001
 VR2                               00000002
@@ -388,16 +426,16 @@ VRR                               00000005
 W                                 00000000
 WR                                00000001
 WREN                              00000002
-WRERR                             00000003
-Z                                 00000002
-_BODEN_OFF                        00003FBF
-_BODEN_ON                         00003FFF
-MPASM  5.35                         FINAL.ASM   11-21-2019  17:42:40         PAGE  8
+MPASM  5.35                         FINAL.ASM   11-22-2019  13:03:52         PAGE  9
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
+WRERR                             00000003
+Z                                 00000002
+_BODEN_OFF                        00003FBF
+_BODEN_ON                         00003FFF
 _BOREN_OFF                        00003FBF
 _BOREN_ON                         00003FFF
 _CP_OFF                           00003FFF
@@ -429,6 +467,6 @@ __DEBUG                           1
 
 Errors   :     0
 Warnings :     3 reported,     0 suppressed
-Messages :     6 reported,     0 suppressed
+Messages :     9 reported,     0 suppressed
 
 
