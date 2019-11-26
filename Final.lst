@@ -1,4 +1,4 @@
-MPASM  5.35                         FINAL.ASM   11-22-2019  14:21:54         PAGE  1
+MPASM  5.35                         FINAL.ASM   11-26-2019  14:34:18         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -57,7 +57,7 @@ Message[302]: Register in operand not in bank 0.  Ensure that bank bits are corr
 000D                  00042 REPETE
 000D   1686           00043         BSF  VERDE2               ;ACENDE UM LED VERDE
 000E   2???           00044         CALL ATRASO       ;Vai para ATRASO
-MPASM  5.35                         FINAL.ASM   11-22-2019  14:21:54         PAGE  2
+MPASM  5.35                         FINAL.ASM   11-26-2019  14:34:18         PAGE  2
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -116,7 +116,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 0034   1506           00095         BSF  VERDE1       ;ACENDE UM LED VERDE
 0035   2???           00096         CALL ATRASO       ;Vai para ATRASO
 0036   1106           00097         BCF  VERDE1       ;DESLIGA O LED VERDE ACESO
-MPASM  5.35                         FINAL.ASM   11-22-2019  14:21:54         PAGE  3
+MPASM  5.35                         FINAL.ASM   11-26-2019  14:34:18         PAGE  3
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -175,7 +175,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 005B   1486           00148         BSF  AMARELO1     ;ACENDE UM LED AMARELO
 005C   2???           00149         CALL ATRASO       ;Vai para ATRASO
 005D   1086           00150         BCF  AMARELO1     ;DESLIGA O LED AMARELO ACESO
-MPASM  5.35                         FINAL.ASM   11-22-2019  14:21:54         PAGE  4
+MPASM  5.35                         FINAL.ASM   11-26-2019  14:34:18         PAGE  4
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -234,7 +234,7 @@ Message[305]: Using default destination of 1 (file).
 0080   0000           00198         NOP
 0081   0000           00199         NOP
 0082   0000           00200         NOP
-MPASM  5.35                         FINAL.ASM   11-22-2019  14:21:54         PAGE  5
+MPASM  5.35                         FINAL.ASM   11-26-2019  14:34:18         PAGE  5
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -283,9 +283,9 @@ Message[305]: Using default destination of 1 (file).
 00A5   0186           00240         CLRF PORTB;LIMPA O PORTB
 00A6   2???           00241         GOTO VOLTA;VOLTA PARA BTN_PRESS
 00A7                  00242 FIMCLEAR_ATRASO ;GERA O TEMPO DE VISUALIZAÇÃO DA RESPOSTA
-00A7   30FF           00243         MOVLW 255
+00A7   30FF           00243         MOVLW 255; PRECISÃO ALTA
 00A8   00A1           00244         MOVWF CONTADOR2
-00A9   30FF           00245         MOVLW 255
+00A9   30FF           00245         MOVLW 255; PRECISÃO BAIXA
 00AA   00A2           00246         MOVWF CONTADOR3
 00AB                  00247 FIMCLEAR_ATRASO_1
 Message[305]: Using default destination of 1 (file).
@@ -293,7 +293,7 @@ Message[305]: Using default destination of 1 (file).
 00AC   2???           00249         GOTO FIMCLEAR_ATRASO_1
 Message[305]: Using default destination of 1 (file).
 00AD   0BA2           00250         DECFSZ CONTADOR3
-MPASM  5.35                         FINAL.ASM   11-22-2019  14:21:54         PAGE  6
+MPASM  5.35                         FINAL.ASM   11-26-2019  14:34:18         PAGE  6
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -310,9 +310,9 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 00B4   0186           00259         CLRF PORTB;LIMPA O PORTB
 00B5   2???           00260         GOTO VOLTA
 00B6                  00261 ERRROW_ATRASO  ;GERA O TEMPO DE VISUALIZAÇÃO DA RESPOSTA
-00B6   30FF           00262         MOVLW 255
+00B6   30FF           00262         MOVLW 255; PRECISÃO ALTA
 00B7   00A1           00263         MOVWF CONTADOR2
-00B8   30FF           00264         MOVLW 255
+00B8   30FF           00264         MOVLW 255; PRECISÃO BAIXA
 00B9   00A2           00265         MOVWF CONTADOR3
 00BA                  00266 ERRROW_ATRASO_1
 Message[305]: Using default destination of 1 (file).
@@ -324,7 +324,7 @@ Message[305]: Using default destination of 1 (file).
 00BE   0008           00271         RETURN
 Warning[205]: Found directive in column 1. (END)
 3F10                  00272 END
-MPASM  5.35                         FINAL.ASM   11-22-2019  14:21:54         PAGE  7
+MPASM  5.35                         FINAL.ASM   11-26-2019  14:34:18         PAGE  7
 
 
 SYMBOL TABLE
@@ -383,7 +383,7 @@ ERRROW                            000000B0
 ERRROW_ATRASO                     000000B6
 ERRROW_ATRASO_1                   000000BA
 F                                 00000001
-MPASM  5.35                         FINAL.ASM   11-22-2019  14:21:54         PAGE  8
+MPASM  5.35                         FINAL.ASM   11-26-2019  14:34:18         PAGE  8
 
 
 SYMBOL TABLE
@@ -442,7 +442,7 @@ SPBRG                             00000099
 SPEN                              00000007
 SREN                              00000005
 STATUS                            00000003
-MPASM  5.35                         FINAL.ASM   11-22-2019  14:21:54         PAGE  9
+MPASM  5.35                         FINAL.ASM   11-26-2019  14:34:18         PAGE  9
 
 
 SYMBOL TABLE
@@ -501,7 +501,7 @@ VRR                               00000005
 W                                 00000000
 WR                                00000001
 WREN                              00000002
-MPASM  5.35                         FINAL.ASM   11-22-2019  14:21:54         PAGE 10
+MPASM  5.35                         FINAL.ASM   11-26-2019  14:34:18         PAGE 10
 
 
 SYMBOL TABLE
